@@ -42,3 +42,9 @@ task :environment do
   #
   ActiveRecord::Base.logger = Logger.new(File.open('database.log', 'a'))
 end
+
+
+desc "Run all the rspec examples"
+task :spec do
+  system "bundle exec rspec -c -f d spec/*_spec.rb"
+end

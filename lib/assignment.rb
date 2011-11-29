@@ -11,5 +11,8 @@ class Assignment < ActiveRecord::Base
     # @see db/migrate/002_create_assignments.rb
     #
     belongs_to :user
+    
+    # Require Assignment to have a reference to User or it is invalid
+    validates :user, :presence => true
 
 end
